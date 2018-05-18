@@ -14,7 +14,6 @@ new Vue({
     speed: 1800,
     speed2: 120,
     count: 108,
-    radius: 5,
     divide: 104
   }),
   template: `
@@ -33,11 +32,8 @@ new Vue({
             <input v-model="count" max="360" />
             <input type="range" v-model="count" max="360" />
             
-            <h5>Radius: {{radius}}</h5>
-            <input type="range" v-model="radius" max="720" />
-
             <h5>Flower divide: {{divide}}</h5>
-            <input type="range" v-model="divide" min="1" :max="count" />
+            <input type="range" v-model="divide" min="1" max="360" />
             
             <Scene :size="size">
                 <Spinner :speed="speed" direction="">
