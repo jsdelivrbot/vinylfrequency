@@ -51,7 +51,7 @@ new Vue({
             </div>
             
             <h2>2. Use the camera as shutter</h2>
-            <p>A comprehensive <a href="https://designstem.github.com/vinylfrequency_camera">link to the camera app</a> (or even QR code)</p>
+            <p>A comprehensive <a href="https://designstem.github.io/vinylfrequency_camera/">link to the camera app</a> (or even QR code)</p>
             
             </div>
             
