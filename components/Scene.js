@@ -1,5 +1,5 @@
 export default {
-  props: ["size"],
+  props: ["size","color"],
   computed: {
     viewBox() {
       return `-${this.size / 2} -${this.size / 2} ${this.size} ${this.size}`;
@@ -9,7 +9,7 @@ export default {
         <svg
             :width="size"
             :height="size"
-            style="background: papayawhip"
+            style="background: color ? color: 'white'"
             :view-box.camel="viewBox"
         >
             <slot />

@@ -8,50 +8,60 @@ import Flower from "./components/Flower.js";
 
 new Vue({
   el: "#app",
-    components: { Scene, Spinner, Box, Spoke, Spiral, Shutter, Flower },
+  components: { Scene, Spinner, Box, Spoke, Spiral, Shutter, Flower },
   data: () => ({
-    size: 200,
+    size: 500,
     speed: 1800,
     speed2: 120,
     count: 108,
     divide: 104
   }),
   template: `
-        <div>
-            <h5>Size: {{size}} px</h5>
-            <input type="range" v-model="size" max="1000" />
+        <div style="height: 100vh">
+          <header>
+            <div>
+                <a href="https://designstem.github.io/homepage">Home</a>
+                → Vinyl Frequency
+            </div>
+           </header>
             
-            <h5>Speed: {{speed}} ms {{speed/1000}} s</h5>
-            <input v-model="speed" min="0.1" max="5000" step="0.01" />
-            <input type="range" v-model="speed" min="0.1" max="5000" step="0.01" />
+           <div style="display: flex; height: 100%">
+            <div style="width: 400px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+            <h2>1. Spin this vinyl</h2>
+            <p>A comprehensive explanation what the heck is going on is going here.</p>
             
-            <button @click="speed = 1800; count = 108">33⅓ RPM</button>
-            <button @click="speed = 1333; count = 80">45 RPM</button>
+            <br />         
+            
+            <div class="button_secondary" @click="speed = 1800; count = 108">33⅓ RPM</div>
+            <div class="button_secondary" @click="speed = 1333; count = 80">45 RPM</div>
+            
+            <br /><br />
+            
+            <label>Speed: <code>{{speed}}ms</code></label>
+            <div style="display:flex; align-items: center;">
+                <input style="margin-right: 1rem" type="range" v-model="speed" min="0.1" max="5000" step="0.01" />
+                <input type="text" size="10" v-model="speed" min="0.1" max="5000" step="0.01" />
+            </div>
 
-            <h5>Spoke count: {{count}}, degrees: {{360 / count}} </h5>
-            <input v-model="count" max="360" />
-            <input type="range" v-model="count" max="360" />
-            
-            <h5>Flower divide: {{divide}}</h5>
-            <input type="range" v-model="divide" min="1" max="360" />
-            
-            <Scene :size="size">
-                <Spinner :speed="speed" direction="">
-                    <Box :size="size / 2" fill="none" />
-                </Spinner>
-            </Scene>
+            <label>Spoke count: <code>{{count}}</code> Degrees: <code>{{String(360 / count).slice(0,10)}}</code> </label>
 
-            <Scene :size="size">
-                <Spinner :speed="speed">
-                    <Spoke :size="size / 2" :count="count" />
-                </Spinner>
-            </Scene>
-
-            <Scene :size="size">
-                <Spinner :speed="speed">
-                    <Flower :size="size / 2" :count="count" :divide="divide"/>
-                </Spinner>
-            </Scene>
+            <div style="display:flex; align-items: center;">
+                <input style="margin-right: 1rem" type="range" v-model="count" max="360" />
+                <input type="text" size="10" v-model="count" max="360" />
+            </div>
+            
+            <h2>2. Use the camera as shutter</h2>
+            <p>A comprehensive <a href="https://designstem.github.com/vinylfrequency_camera">link to the camera app</a> (or even QR code)</p>
+            
+            </div>
+            
+            <div style="padding: 2rem">
+                <Scene :size="size">
+                    <Spinner :speed="speed">
+                        <Spoke :size="size / 2" :count="count" />
+                    </Spinner>
+                </Scene>
+            </div>
 
         </div>
     `
