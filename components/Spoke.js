@@ -12,6 +12,7 @@ export default {
                 :x2="cx(360 / count * index,size)"
                 :y2="cy(360 / count * index,size)"
                 stroke="black"
+                stroke-width="3"
             />
         </g>
     `
