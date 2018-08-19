@@ -1,9 +1,9 @@
 import { cx, cy } from '../utils.js'
 
 export default {
-  props: ["size", "count"],
-  methods: { cx, cy },
-  template: `
+    props: ["size", "count"],
+    methods: { cx, cy },
+    template: `
         <g>
             <line
                 v-for="(item, index) in Array.from({length: 720}).slice(0,count)"
