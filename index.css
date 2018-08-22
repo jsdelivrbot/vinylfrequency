@@ -21,3 +21,13 @@
     opacity: 0;
   }
 }
+
+.button_tertiary {
+  padding: 0.25rem 0.5rem;
+  display: inline-flex;
+  border: 3px solid var(--color-gray-dark);
+  border-radius: var(--border-radius);
+  color: var(--color-gray-dark);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
