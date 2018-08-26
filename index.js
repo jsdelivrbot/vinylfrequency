@@ -20,6 +20,15 @@ const LoopSquare = {
   `
 }
 
+const LoopColor = {
+  props: ["count", "n", "size"],
+  template: `
+      <g>
+        <rect :x="size / -2" :y="size / -2" :width="size" :height="size" :fill="['#ff0000','#00ff00','#0000ff'][n % 3]" />
+     </g>
+  `
+};
+
 const LoopHorse = {
   props: ["count", "n", "size"],
   template: `
@@ -71,6 +80,7 @@ new Vue({
   },
   data: () => ({
     loops: [
+      { title: "Color", component: LoopColor },
       { title: "Metropolis", component: LoopMetropolis },
       { title: "Hammer", component: LoopHammer },
       { title: "Horse", component: LoopHorse },
@@ -118,7 +128,7 @@ new Vue({
           <h3>Count</h3>
           
           <label>Element count <code>{{count}}</code></label>
-          <input type="range" v-model="count" />
+          <input type="range" v-model="count" max="120" />
 
           <div
             v-for="c in [15,30,45,60,120]"
@@ -131,7 +141,7 @@ new Vue({
         <div style="padding: 2rem; flex:1">
           <Scene :size="sceneSize">
             <Spinner :speed="speed">
-            <g v-for="(_,n) in Array.from({length: 100}).slice(0,count)" :transform="r(360 / count * n)"> 
+            <g v-for="(_,n) in Array.from({length: 120}).slice(0,count)" :transform="r(360 / count * n)"> 
             <g :transform="t(0,(sceneSize / 2 - size) * -1 * 0.9)"> 
               <component :is="loops[loopIndex].component" :count="count" :n="n" :size="size" />
             </g>        
