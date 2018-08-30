@@ -33,7 +33,7 @@ const LoopLine = {
   props: ["count", "n", "size"],
   template: `
       <g>
-        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="black" />
+        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="var(--color-purple)" />
      </g>
   `
 };
@@ -97,18 +97,18 @@ new Vue({
       { title: "Square", component: LoopSquare },
       { title: "Color", component: LoopColor }
     ],
-    loopIndex: 3,
-    count: 30,
-    size: 120,
-    sceneSize: 1600,
-    speed: 50000
+    loopIndex: 0,
+    count: 60,
+    size: 25,
+    sceneSize: 600,
+    speed: 1000
   }),
   template: `
     <div style="height: 100vh">
       <header style="background: var(--color-yellow)">
         <div>
           <a href="https://designstem.github.io/homepage">Home</a>
-          → Vinyl Frequency
+          → Frequency & Movement
         </div>
       </header>
       <!--header>
@@ -116,20 +116,36 @@ new Vue({
           <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
         </div>
       </header-->
-      <div style="display: flex; height: 100%; background: var(--color-yellow)">
-        <div style="padding: 2rem;">
+      <div style="display: flex; height: 100%">
+        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
-          <h1 style="font-size: 5rem; line-height: 5rem;">Frequency &&nbsp;Movement</h1>
-            <h3>Learn about frequency</h3>
-            <br><br>
-            <a href="./step1.html" class="button_primary">Go to Step 1 →</a>
+          <h2><div class="bullet">3</div>All together now</h2>
+          <h3>Adjust the rotation speed <i>and</i> number of lines so the wheel stops.</h3>
+          <br>
+          <div class="text">
+            <p>Rotation speed is <code>{{speed }}ms = {{ speed / 1000}}s</code> per rotation.</p>
+          </div>
+          <input type="range" v-model="speed" step="2" min="0" max="2000" />
+          
+          <div class="text">
+            <p>Number of lines is <code>{{ count }}</code>. <p>
+          </div>
+          <input type="range" v-model="count" max="120" />          
+
+          <template v-if="count == 60">
+          <div class="text">
+            <p>Gotcha! We ended up in a place where we have <code>1&nbsp;second</code> for a full rotation and <code>60 lines</code> on a wheel. Do you know how fast your monitor updates it's picture? Its <code>60Hz</code> or <i>60 times per second</i>. See? The wheel <i>never stopped</i>. It is moving <i>right now</i>. It is all an <i>illusion</i>.</p>
+          </div>
+          <br>
+            <a href="./step2.html" class="button_secondary">←</a> <a href="./step4.html" class="button_primary">Go to Step 4 →</a>
+          </template>
 
         </div>
-        <div style="flex:1">
+        <div style="padding: 2rem; flex:1">
           <Scene :size="sceneSize">
             <Spinner :speed="speed">
             <g v-for="(_,n) in Array.from({length: 120}).slice(0,count)" :transform="r(360 / count * n)"> 
-            <g :transform="t(0,(sceneSize / 2 - size) * -1 * 1.1)"> 
+            <g :transform="t(0,(sceneSize / 2 - size) * -1 * 0.9)"> 
               <component :is="loops[loopIndex].component" :count="count" :n="n" :size="size" />
             </g>        
             </g>

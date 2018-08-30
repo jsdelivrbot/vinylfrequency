@@ -33,7 +33,7 @@ const LoopLine = {
   props: ["count", "n", "size"],
   template: `
       <g>
-        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="black" />
+        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="var(--color-purple)" />
      </g>
   `
 };
@@ -97,18 +97,18 @@ new Vue({
       { title: "Square", component: LoopSquare },
       { title: "Color", component: LoopColor }
     ],
-    loopIndex: 3,
-    count: 30,
-    size: 120,
-    sceneSize: 1600,
-    speed: 50000
+    loopIndex: 0,
+    count: 60,
+    size: 25,
+    sceneSize: 700,
+    speed: 1000
   }),
   template: `
     <div style="height: 100vh">
       <header style="background: var(--color-yellow)">
         <div>
           <a href="https://designstem.github.io/homepage">Home</a>
-          → Vinyl Frequency
+          → Frequency & Movement
         </div>
       </header>
       <!--header>
@@ -116,20 +116,56 @@ new Vue({
           <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
         </div>
       </header-->
-      <div style="display: flex; height: 100%; background: var(--color-yellow)">
-        <div style="padding: 2rem;">
+      <div style="display: flex; height: 100%">
+        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
-          <h1 style="font-size: 5rem; line-height: 5rem;">Frequency &&nbsp;Movement</h1>
-            <h3>Learn about frequency</h3>
-            <br><br>
-            <a href="./step1.html" class="button_primary">Go to Step 1 →</a>
+          <h2><div class="bullet">2</div>Make it stop, again</h2>
+          <h3>Adjust the number of lines so the wheel stops</h3>
+          <div class="text">
+            <p>Number of lines is <code>{{ count }}</code>. <p>
+          </div>
+          <input type="range" v-model="count" max="120" />          
+          
+          <template v-if="count == 0">
+            <div class="text">Really? Like <i>really really really</i>?</div>
+          </template>
+
+          <template v-if="count == 15">
+            <div class="text">Did it stop? My eyes are not sure. Try some more.</div>
+          </template>
+
+          <template v-if="count == 30">
+            <div class="text">
+              <p>Yes, it kind of stopped but this flicker is kind of annoying. Can you do better?</p>
+              </div>
+          </template>
+
+          <template v-if="count == 60">
+          <div class="text">
+            <p>Wow! It stopped exactly at <code>60&nbsp;lines</code>. <i>Why</i>? Let's figure it out in next steps.</p>
+          </div>
+          <br>
+            <a href="./step1.html" class="button_secondary">←</a> <a href="./step3.html" class="button_primary">Go to Step 3 →</a>
+          </template>
+
+          <template v-if="count == 90">
+            <div class="text">
+              <p>Ok, you can call it stopping, I call it a flicker. Try some more!</p>
+              </div>
+          </template>
+
+          <template v-if="count == 120">
+          <div class="text">
+            <p>Very good, it stopped! But can you do it with lesser number of lines as well?</p>
+          </div>
+          </template>
 
         </div>
-        <div style="flex:1">
+        <div style="padding: 2rem; flex:1">
           <Scene :size="sceneSize">
             <Spinner :speed="speed">
             <g v-for="(_,n) in Array.from({length: 120}).slice(0,count)" :transform="r(360 / count * n)"> 
-            <g :transform="t(0,(sceneSize / 2 - size) * -1 * 1.1)"> 
+            <g :transform="t(0,(sceneSize / 2 - size) * -1 * 0.9)"> 
               <component :is="loops[loopIndex].component" :count="count" :n="n" :size="size" />
             </g>        
             </g>
