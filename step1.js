@@ -33,7 +33,7 @@ const LoopLine = {
   props: ["count", "n", "size"],
   template: `
       <g>
-        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="black" />
+        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="var(--color-purple)" />
      </g>
   `
 };
@@ -97,18 +97,18 @@ new Vue({
       { title: "Square", component: LoopSquare },
       { title: "Color", component: LoopColor }
     ],
-    loopIndex: 3,
-    count: 30,
-    size: 120,
-    sceneSize: 1600,
-    speed: 50000
+    loopIndex: 0,
+    count: 60,
+    size: 25,
+    sceneSize: 700,
+    speed: 1000
   }),
   template: `
     <div style="height: 100vh">
       <header style="background: var(--color-yellow)">
         <div>
           <a href="https://designstem.github.io/homepage">Home</a>
-          → Vinyl Frequency
+          → Frequency & Movement
         </div>
       </header>
       <!--header>
@@ -116,20 +116,38 @@ new Vue({
           <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
         </div>
       </header-->
-      <div style="display: flex; height: 100%; background: var(--color-yellow)">
-        <div style="padding: 2rem;">
+      <div style="display: flex; height: 100%">
+        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
-          <h1 style="font-size: 5rem; line-height: 5rem;">Frequency &&nbsp;Movement</h1>
-            <h3>Learn about frequency</h3>
-            <br><br>
-            <a href="./step1.html" class="button_primary">Go to Step 1 →</a>
+          <h2><div class="bullet">1</div>Make it Stop</h2>
+          <h3>Adjust the wheel speed so it stops</h3>
+          <div class="text">
+            <p>Rotation speed is <code>{{speed }}</code> <i>milliseconds</i> per rotation. 
+          This is roughly <code>{{ speed / 1000}}</code> <i>seconds</i>
+            <p>
+          </div>
+          <br>
+          <input type="range" v-model="speed" step="2" min="0" max="2000" />
+          
+          <template v-if="speed == 0">
+            <div class="text">Hey, this is cheating! The wheel has to have <i>some</i> speed :)</div>
+          </template>
+
+          <template v-if="speed == 1000">
+          <div class="text">
+            <p>Great! You found that magical point, so it takes exactly <code>1&nbsp;second</code> to make the wheel stop. <i>Why</i>?</p>
+            <p>Lets move to next step to figure this out.</p>
+          </div>
+          <br>
+            <a href="./index.html" class="button_secondary">←</a> <a href="./step2.html" class="button_primary">Go to Step 2 →</a>
+          </template>
 
         </div>
-        <div style="flex:1">
+        <div style="padding: 2rem; flex:1">
           <Scene :size="sceneSize">
             <Spinner :speed="speed">
             <g v-for="(_,n) in Array.from({length: 120}).slice(0,count)" :transform="r(360 / count * n)"> 
-            <g :transform="t(0,(sceneSize / 2 - size) * -1 * 1.1)"> 
+            <g :transform="t(0,(sceneSize / 2 - size) * -1 * 0.9)"> 
               <component :is="loops[loopIndex].component" :count="count" :n="n" :size="size" />
             </g>        
             </g>
