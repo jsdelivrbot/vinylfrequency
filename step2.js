@@ -142,7 +142,7 @@ new Vue({
 
           <template v-if="count == 60">
           <div class="text">
-            <p>Wow! It stopped exactly at <code>60&nbsp;lines</code>. <i>Why</i>? Let's figure it out in next step.</p>
+            <p>Wow! It stopped exactly at <code>60&nbsp;lines</code>. <i>Why</i>? Let's figure it out in the next step.</p>
           </div>
           <br>
             <a href="https://designstem.github.io/vinylfrequency/step1.html" class="button_secondary">←</a>

@@ -132,7 +132,7 @@ new Vue({
           </div>
           <input type="range" v-model="count" max="120" />          
 
-          <template v-if="count == 60">
+          <template v-if="speed == 1000 && count == 60">
           <div class="text">
             <p>Gotcha! We ended up in a place where we have <code>1&nbsp;second</code> for a full rotation and <code>60 lines</code> on a wheel. Do you know how fast your monitor updates it's picture? It is <code>60Hz</code> or <i>60 times per second</i>. See? The wheel <i>never stopped</i>. It is moving <i>right now</i>. It is all an <i>illusion</i>.</p>
           </div>
