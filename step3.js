@@ -98,10 +98,10 @@ new Vue({
       { title: "Color", component: LoopColor }
     ],
     loopIndex: 0,
-    count: 60,
+    count: 22,
     size: 25,
     sceneSize: 600,
-    speed: 1000
+    speed: 1250
   }),
   template: `
     <div style="height: 100vh">
@@ -117,7 +117,7 @@ new Vue({
         </div>
       </header-->
       <div style="display: flex; height: 100%">
-        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+        <div style="width: 500px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
           <h2><div class="bullet">3</div>All together now</h2>
           <h3>Adjust the rotation speed <i>and</i> number of lines so the wheel stops.</h3>
@@ -134,10 +134,10 @@ new Vue({
 
           <template v-if="count == 60">
           <div class="text">
-            <p>Gotcha! We ended up in a place where we have <code>1&nbsp;second</code> for a full rotation and <code>60 lines</code> on a wheel. Do you know how fast your monitor updates it's picture? Its <code>60Hz</code> or <i>60 times per second</i>. See? The wheel <i>never stopped</i>. It is moving <i>right now</i>. It is all an <i>illusion</i>.</p>
+            <p>Gotcha! We ended up in a place where we have <code>1&nbsp;second</code> for a full rotation and <code>60 lines</code> on a wheel. Do you know how fast your monitor updates it's picture? It is <code>60Hz</code> or <i>60 times per second</i>. See? The wheel <i>never stopped</i>. It is moving <i>right now</i>. It is all an <i>illusion</i>.</p>
           </div>
           <br>
-            <a href="./step2.html" class="button_secondary">←</a> <a href="./step4.html" class="button_primary">Go to Step 4 →</a>
+            <a href="https://designstem.github.com/vinylfrequency/step2.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step4.html" class="button_primary">Go to Step 4 →</a>
           </template>
 
         </div>

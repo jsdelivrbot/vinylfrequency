@@ -98,9 +98,9 @@ new Vue({
       { title: "Color", component: LoopColor }
     ],
     loopIndex: 0,
-    count: 60,
+    count: 72,
     size: 25,
-    sceneSize: 700,
+    sceneSize: 600,
     speed: 1000
   }),
   template: `
@@ -117,7 +117,7 @@ new Vue({
         </div>
       </header-->
       <div style="display: flex; height: 100%">
-        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+        <div style="width: 500px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
           <h2><div class="bullet">2</div>Make it stop, again</h2>
           <h3>Adjust the number of lines so the wheel stops</h3>
@@ -127,11 +127,11 @@ new Vue({
           <input type="range" v-model="count" max="120" />          
           
           <template v-if="count == 0">
-            <div class="text">Really? Like <i>really really really</i>?</div>
+            <div class="text"><p>Really? Like <i>really really really</i>?</p></div>
           </template>
 
           <template v-if="count == 15">
-            <div class="text">Did it stop? My eyes are not sure. Try some more.</div>
+            <div class="text"><p>Did it stop? My eyes are not sure. Try some more.</p></div>
           </template>
 
           <template v-if="count == 30">
@@ -142,16 +142,16 @@ new Vue({
 
           <template v-if="count == 60">
           <div class="text">
-            <p>Wow! It stopped exactly at <code>60&nbsp;lines</code>. <i>Why</i>? Let's figure it out in next steps.</p>
+            <p>Wow! It stopped exactly at <code>60&nbsp;lines</code>. <i>Why</i>? Let's figure it out in next step.</p>
           </div>
           <br>
-            <a href="./step1.html" class="button_secondary">←</a> <a href="./step3.html" class="button_primary">Go to Step 3 →</a>
+            <a href="https://designstem.github.com/vinylfrequency/step1.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step3.html" class="button_primary">Go to Step 3 →</a>
           </template>
 
           <template v-if="count == 90">
             <div class="text">
               <p>Ok, you can call it stopping, I call it a flicker. Try some more!</p>
-              </div>
+            </div>
           </template>
 
           <template v-if="count == 120">

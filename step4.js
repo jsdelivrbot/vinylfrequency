@@ -1,3 +1,5 @@
+import Buttons from "https://rawgit.com/designstem/style/master/components/Buttons.js";
+
 import Scene from "./components/Scene.js";
 import Spoke2 from "./components/Spoke2.js";
 import Spinner from "./components/Spinner.js";
@@ -75,7 +77,8 @@ new Vue({
     LoopSquare,
     LoopHammer,
     LoopMetropolis,
-    LoopHorse
+    LoopHorse,
+    Buttons
   },
   methods: {
     t(x, y, r = 0) {
@@ -92,74 +95,59 @@ new Vue({
     loops: [
       { title: "Line", component: LoopLine },
       { title: "Metropolis", component: LoopMetropolis },
-      { title: "Hammer", component: LoopHammer },
       { title: "Horse", component: LoopHorse },
-      { title: "Square", component: LoopSquare },
-      { title: "Color", component: LoopColor }
+      { title: "Dancer", component: LoopHammer }
+      //{ title: "Square", component: LoopSquare },
+      //{ title: "Color", component: LoopColor }
     ],
     loopIndex: 0,
     count: 60,
     size: 25,
     sceneSize: 600,
-    speed: 800
+    speed: 1000
   }),
   template: `
     <div style="height: 100vh">
-      <header style="background: var(--color-yellow);">
+      <header style="background: var(--color-yellow)">
         <div>
           <a href="https://designstem.github.io/homepage">Home</a>
           → Frequency & Movement
         </div>
       </header>
-      <!--header>
-        <div>
-          <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
-        </div>
-      </header-->
       <div style="display: flex; height: 100%">
-        <div style="width: 500px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
-          <h2><div class="bullet">1</div>Make it stop</h2>
-          <h3>Adjust the wheel speed so it stops</h3>
+          <h2><div class="bullet">4</div>An illusion</h2>
           <div class="text">
-            <p>Rotation speed is <code>{{speed }}</code> <i>milliseconds</i> per rotation. 
-          This is roughly <code>{{ speed / 1000}}</code> <i>seconds</i>
-            <p>
+            <p>This illusion is the very foundation of cinema: by showing the a set of image frames in movement in certain <b>frequency</b> it tricks the eye and we <a target="_blank" href="https://en.wikipedia.org/wiki/Persistence_of_vision">perceive</a> it as a continuous movement.</p><p>This applies to all moving image: from <a target="_blank"  href="https://en.wikipedia.org/wiki/Thaumatrope">obsure</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Phenakistiscope">19th</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Zoopraxiscope">century</a> <a target="_blank" href="https://en.wikipedia.org/wiki/Kinetoscope">gadgets</a> to <a target="_blank" href="https://www.youtube.com/watch?v=En__V0oEJsU">film projector</a> to current <a target="_blank" href="https://giphy.com/search/muybridge">GIF crazyness</a>.</p>
           </div>
           <br>
-          <input type="range" v-model="speed" step="10" min="0" max="2000" />
-          
-          <template v-if="speed == 0">
-            <div class="text"><p>Hey, this is cheating! The wheel has to have <i>some</i> speed :)</p></div>
-          </template>
+          <h3>Now, select image you want to show on a wheel</h3>
 
-          <template v-if="speed == 500">
-          <div class="text">
-            <p>Almost there! Wait...it seems it is still moving?</p>
-          </div>
-          </template>
+          <buttons :buttons="loops.map(l => l.title)" v-model="loopIndex" />
 
-
-          <template v-if="speed > 950 && speed != 1000 && speed < 1001">
-          <div class="text">
-            <p>Getting close!</p>
-          </div>
-          </template>
-
-          <template v-if="speed == 1000">
-          <div class="text">
-            <p>Great! So it takes exactly <code>1&nbsp;second</code> to make the wheel stop. <i>But why</i>?</p>
-            <p>Lets move to next step to figure it out.</p>
-          </div>
+          <template v-if="loopIndex > 0">
           <br>
-          <a href="https://designstem.github.com/vinylfrequency/index.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step2.html" class="button_primary">Go to Step 2 →</a>
+          <h3>Play around with image count and size</h3>
+  
+          <div class="text">
+            <p>Number of images is <code>{{ count }}</code>. <p>
+          </div>
+
+          <input type="range" v-model="count" max="120" />          
+
+          <div class="text">
+              <p>Image size is <code>{{ size }}px</code>.</p>
+          </div>
+
+          <input type="range" v-model="size" />
+
+          <br>
+          <a href="https://designstem.github.com/vinylfrequency/step3.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step5.html" class="button_primary">Go to final step 5 →</a>
+          
           </template>
 
-          <template v-if="speed == 2000">
-          <div class="text">
-            <p>Stopped or not? I am not sure, it's too blurry. Dial it down!</p>
-          </div>
-          </template>
+
 
         </div>
         <div style="padding: 2rem; flex:1">

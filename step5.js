@@ -1,3 +1,5 @@
+import Buttons from "https://rawgit.com/designstem/style/master/components/Buttons.js";
+
 import Scene from "./components/Scene.js";
 import Spoke2 from "./components/Spoke2.js";
 import Spinner from "./components/Spinner.js";
@@ -24,8 +26,8 @@ const LoopColor = {
   props: ["count", "n", "size"],
   template: `
       <g>
-        <rect :x="size / -2" :y="size / -2" :width="size" :height="size" :fill="['#ff0000','#00ff00','#0000ff'][n % 3]" />
-     </g>
+        <circle :cx="size / -2" :cy="size / -2" :r="size / 2" :fill="['#ff0000','#00ff00','#0000ff'][n % 3]" />
+      </g>
   `
 };
 
@@ -75,7 +77,8 @@ new Vue({
     LoopSquare,
     LoopHammer,
     LoopMetropolis,
-    LoopHorse
+    LoopHorse,
+    Buttons
   },
   methods: {
     t(x, y, r = 0) {
@@ -90,76 +93,57 @@ new Vue({
   },
   data: () => ({
     loops: [
-      { title: "Line", component: LoopLine },
+      //{ title: "Line", component: LoopLine },
       { title: "Metropolis", component: LoopMetropolis },
-      { title: "Hammer", component: LoopHammer },
       { title: "Horse", component: LoopHorse },
-      { title: "Square", component: LoopSquare },
-      { title: "Color", component: LoopColor }
+      { title: "Dancer", component: LoopHammer },
+      //{ title: "Square", component: LoopSquare },
+      { title: "Color dot", component: LoopColor }
     ],
     loopIndex: 0,
     count: 60,
     size: 25,
     sceneSize: 600,
-    speed: 800
+    speed: 1000
   }),
   template: `
     <div style="height: 100vh">
-      <header style="background: var(--color-yellow);">
+      <header style="background: var(--color-yellow)">
         <div>
           <a href="https://designstem.github.io/homepage">Home</a>
           → Frequency & Movement
         </div>
       </header>
-      <!--header>
-        <div>
-          <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
-        </div>
-      </header-->
       <div style="display: flex; height: 100%">
-        <div style="width: 500px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
-          <h2><div class="bullet">1</div>Make it stop</h2>
-          <h3>Adjust the wheel speed so it stops</h3>
+          <h2><div class="bullet">5</div>What next?</h2>
+
+
+          <h3><div class="bullet">A</div>Take it for a spin</h3>
+
           <div class="text">
-            <p>Rotation speed is <code>{{speed }}</code> <i>milliseconds</i> per rotation. 
-          This is roughly <code>{{ speed / 1000}}</code> <i>seconds</i>
-            <p>
+            <p>Hook up a vinyl player and use the  <b>printouts</b> to explore motion and frequency in a real world.</p>
           </div>
+
+          <h3><div class="bullet">B</div>Experiment with lower framerates</h3>
+
+          <div class="text">
+            <p>While we can not adjust the computer screen update frequency so easily, <a href="https://designstem.github.io/vinylfrequency_camera" target="_blank">we can use an app</a> to control camera framerate.</p>
+          </div>
+
+          <h3><div class="bullet">C</div>Explore color in motion</h3>
+          <div class="text">
+            <p>There are some <a href="" @click.prevent="loopIndex = 3">color dots</a> you can play with.</p><template v-if="loopIndex == 3"><p>Rotation speed is <code>{{speed }}ms</code>. <i>Why the colors dots turn gray in certain speeds</i>?</p></template>
+          </div>
+
+          <template v-if="loopIndex == 3">
           <br>
-          <input type="range" v-model="speed" step="10" min="0" max="2000" />
-          
-          <template v-if="speed == 0">
-            <div class="text"><p>Hey, this is cheating! The wheel has to have <i>some</i> speed :)</p></div>
+          <input type="range" v-model="speed" step="2" min="0" max="2000" />
           </template>
 
-          <template v-if="speed == 500">
-          <div class="text">
-            <p>Almost there! Wait...it seems it is still moving?</p>
-          </div>
-          </template>
-
-
-          <template v-if="speed > 950 && speed != 1000 && speed < 1001">
-          <div class="text">
-            <p>Getting close!</p>
-          </div>
-          </template>
-
-          <template v-if="speed == 1000">
-          <div class="text">
-            <p>Great! So it takes exactly <code>1&nbsp;second</code> to make the wheel stop. <i>But why</i>?</p>
-            <p>Lets move to next step to figure it out.</p>
-          </div>
           <br>
-          <a href="https://designstem.github.com/vinylfrequency/index.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step2.html" class="button_primary">Go to Step 2 →</a>
-          </template>
-
-          <template v-if="speed == 2000">
-          <div class="text">
-            <p>Stopped or not? I am not sure, it's too blurry. Dial it down!</p>
-          </div>
-          </template>
+          <a href="https://designstem.github.com/vinylfrequency/step4.html" class="button_secondary">←</a> <a href="https://designstem.github.io/homepage" class="button_secondary">Back to homepage</a>
 
         </div>
         <div style="padding: 2rem; flex:1">

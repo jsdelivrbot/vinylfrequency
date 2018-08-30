@@ -98,17 +98,16 @@ new Vue({
       { title: "Color", component: LoopColor }
     ],
     loopIndex: 3,
-    count: 30,
+    count: 15,
     size: 120,
-    sceneSize: 1600,
+    sceneSize: 1500,
     speed: 50000
   }),
   template: `
     <div style="height: 100vh">
-      <header style="background: var(--color-yellow)">
+      <header style="background: var(--color-yellow); border-bottom: none">
         <div>
-          <a href="https://designstem.github.io/homepage">Home</a>
-          → Vinyl Frequency
+          ← <a href="https://designstem.github.io/homepage">Home</a>
         </div>
       </header>
       <!--header>
@@ -120,18 +119,18 @@ new Vue({
         <div style="padding: 2rem;">
           
           <h1 style="font-size: 5rem; line-height: 5rem;">Frequency &&nbsp;Movement</h1>
-            <h3>Learn about frequency</h3>
+            <h2>Learn about the beginnings of moving pictures, the art and the science behind it and why we are still so mesmerized watching those GIF animations</h2>
             <br><br>
-            <a href="./step1.html" class="button_primary">Go to Step 1 →</a>
+            <a href="https://designstem.github.com/vinylfrequency/step1.html" class="button_primary">Go to Step 1 →</a>
 
         </div>
-        <div style="flex:1">
+        <div style="flex:1; margin-left: -10rem">
           <Scene :size="sceneSize">
             <Spinner :speed="speed">
             <g v-for="(_,n) in Array.from({length: 120}).slice(0,count)" :transform="r(360 / count * n)"> 
             <g :transform="t(0,(sceneSize / 2 - size) * -1 * 1.1)"> 
-              <component :is="loops[loopIndex].component" :count="count" :n="n" :size="size" />
-            </g>        
+              <component is="LoopHorse" :count="count" :n="n" :size="size * 2" />
+            </g>          
             </g>
           </Spinner>
           </Scene>
