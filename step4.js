@@ -143,7 +143,7 @@ new Vue({
           <input type="range" v-model="size" />
 
           <br>
-          <a href="https://designstem.github.com/vinylfrequency/step3.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step5.html" class="button_primary">Go to final step 5 →</a>
+          <a href="https://designstem.github.io/vinylfrequency/step3.html" class="button_secondary">←</a> <a href="https://designstem.github.io/vinylfrequency/step5.html" class="button_primary">Go to final step 5 →</a>
           
           </template>
 

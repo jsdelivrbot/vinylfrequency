@@ -145,7 +145,8 @@ new Vue({
             <p>Wow! It stopped exactly at <code>60&nbsp;lines</code>. <i>Why</i>? Let's figure it out in next step.</p>
           </div>
           <br>
-            <a href="https://designstem.github.com/vinylfrequency/step1.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step3.html" class="button_primary">Go to Step 3 →</a>
+            <a href="https://designstem.github.io/vinylfrequency/step1.html" class="button_secondary">←</a>
+            <a href="https://designstem.github.io/vinylfrequency/step3.html" class="button_primary">Go to Step 3 →</a>
           </template>
 
           <template v-if="count == 90">

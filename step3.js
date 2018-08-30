@@ -137,7 +137,7 @@ new Vue({
             <p>Gotcha! We ended up in a place where we have <code>1&nbsp;second</code> for a full rotation and <code>60 lines</code> on a wheel. Do you know how fast your monitor updates it's picture? It is <code>60Hz</code> or <i>60 times per second</i>. See? The wheel <i>never stopped</i>. It is moving <i>right now</i>. It is all an <i>illusion</i>.</p>
           </div>
           <br>
-            <a href="https://designstem.github.com/vinylfrequency/step2.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step4.html" class="button_primary">Go to Step 4 →</a>
+            <a href="https://designstem.github.io/vinylfrequency/step2.html" class="button_secondary">←</a> <a href="https://designstem.github.io/vinylfrequency/step4.html" class="button_primary">Go to Step 4 →</a>
           </template>
 
         </div>

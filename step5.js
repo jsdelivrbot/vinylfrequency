@@ -143,7 +143,7 @@ new Vue({
           </template>
 
           <br>
-          <a href="https://designstem.github.com/vinylfrequency/step4.html" class="button_secondary">←</a> <a href="https://designstem.github.io/homepage" class="button_secondary">Back to homepage</a>
+          <a href="https://designstem.github.io/vinylfrequency/step4.html" class="button_secondary">←</a> <a href="https://designstem.github.io/homepage" class="button_secondary">Back to homepage</a>
 
         </div>
         <div style="padding: 2rem; flex:1">

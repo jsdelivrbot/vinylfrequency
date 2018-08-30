@@ -121,7 +121,7 @@ new Vue({
           <h1 style="font-size: 5rem; line-height: 5rem;">Frequency &&nbsp;Movement</h1>
             <h2>Learn about the beginnings of moving pictures, the art and the science behind it and why we are still so mesmerized watching those GIF animations</h2>
             <br><br>
-            <a href="https://designstem.github.com/vinylfrequency/step1.html" class="button_primary">Go to Step 1 →</a>
+            <a href="https://designstem.github.io/vinylfrequency/step1.html" class="button_primary">Go to Step 1 →</a>
 
         </div>
         <div style="flex:1; margin-left: -10rem">

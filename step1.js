@@ -152,7 +152,8 @@ new Vue({
             <p>Lets move to next step to figure it out.</p>
           </div>
           <br>
-          <a href="https://designstem.github.com/vinylfrequency/index.html" class="button_secondary">←</a> <a href="https://designstem.github.com/vinylfrequency/step2.html" class="button_primary">Go to Step 2 →</a>
+          <a href="https://designstem.github.io/vinylfrequency/step1.html" class="button_secondary">←</a>
+          <a href="https://designstem.github.io/vinylfrequency/step2.html" class="button_primary">Go to Step 2 →</a>
           </template>
 
           <template v-if="speed == 2000">
