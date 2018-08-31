@@ -123,18 +123,18 @@ new Vue({
           <h3><div class="bullet">A</div>Take it for a spin</h3>
 
           <div class="text">
-            <p>Hook up a vinyl player and use the  <b>printouts</b> to explore motion and frequency in a real world.</p>
+            <p>Hook up a vinyl player and use the  <b>printouts</b> to explore motion and frequency in real world.</p>
           </div>
 
           <h3><div class="bullet">B</div>Experiment with lower framerates</h3>
 
           <div class="text">
-            <p>While we can not adjust the computer screen update frequency so easily, <a href="https://designstem.github.io/vinylfrequency_camera" target="_blank">we can use an app</a> to control camera framerate.</p>
+            <p>While we cannot adjust the computer screen update frequency so easily, <a href="https://designstem.github.io/vinylfrequency_camera" target="_blank">we can use an app</a> to control camera framerate.</p>
           </div>
 
           <h3><div class="bullet">C</div>Explore color in motion</h3>
           <div class="text">
-            <p>There are some <a href="" @click.prevent="loopIndex = 3">color dots</a> you can play with.</p><template v-if="loopIndex == 3"><p>Rotation speed is <code>{{speed }}ms</code>. <i>Why the colors dots turn gray in certain speeds</i>?</p></template>
+            <p>There are some <a href="" @click.prevent="loopIndex = 3">color dots</a> you can play with.</p><template v-if="loopIndex == 3"><p>Rotation speed is <code>{{speed }}ms</code>. <i>Why the color dots turn gray at certain speeds</i>?</p></template>
           </div>
 
           <template v-if="loopIndex == 3">

@@ -131,7 +131,7 @@ new Vue({
           </template>
 
           <template v-if="count == 15">
-            <div class="text"><p>Did it stop? My eyes are not sure. Try some more.</p></div>
+            <div class="text"><p>Did it stop? My eyes are not sure.</p></div>
           </template>
 
           <template v-if="count == 30">
@@ -157,7 +157,7 @@ new Vue({
 
           <template v-if="count == 120">
           <div class="text">
-            <p>Very good, it stopped! But can you do it with lesser number of lines as well?</p>
+            <p>Very good, it stopped! But can you do it with smaller number of lines as well?</p>
           </div>
           </template>
 

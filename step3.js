@@ -120,7 +120,7 @@ new Vue({
         <div style="width: 500px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
           
           <h2><div class="bullet">3</div>All together now</h2>
-          <h3>Adjust the rotation speed <i>and</i> number of lines so the wheel stops.</h3>
+          <h3>Adjust the rotation speed <i>and</i> the number of lines so the wheel stops.</h3>
           <br>
           <div class="text">
             <p>Rotation speed is <code>{{speed }}ms = {{ speed / 1000}}s</code> per rotation.</p>

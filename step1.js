@@ -149,7 +149,7 @@ new Vue({
           <template v-if="speed == 1000">
           <div class="text">
             <p>Great! So it takes exactly <code>1&nbsp;second</code> to make the wheel stop. <i>But why</i>?</p>
-            <p>Lets move to next step to figure it out.</p>
+            <p>Lets move to the next step to figure it out.</p>
           </div>
           <br>
           <a href="https://designstem.github.io/vinylfrequency" class="button_secondary">←</a>
