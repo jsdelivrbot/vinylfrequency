@@ -16,8 +16,8 @@ const LoopSquare = {
   },
   template: `
     <g :transform="r(360 / count * n)" opacity="0.5">
-      <rect :x="size / -2" :y="size / -2" :width="size" :height="size" fill="var(--color-purple)" />
-      <rect :x="size / -2" :y="size / -2" :width="size / 2" :height="size / 2" fill="var(--color-yellow)" />
+      <rect :x="size / -2" :y="size / -2" :width="size" :height="size" fill="var(--purple)" />
+      <rect :x="size / -2" :y="size / -2" :width="size / 2" :height="size / 2" fill="var(--yellow)" />
     </g>
   `
 };
@@ -35,7 +35,7 @@ const LoopLine = {
   props: ["count", "n", "size"],
   template: `
       <g>
-        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="var(--color-purple)" />
+        <rect :x="size / -2" :y="size / -2" :width="10" :height="size" fill="var(--purple)" />
      </g>
   `
 };
@@ -108,14 +108,14 @@ new Vue({
   }),
   template: `
     <div style="height: 100vh">
-      <header style="background: var(--color-yellow)">
+      <header style="background: var(--yellow)">
         <div>
           <a href="https://designstem.github.io/homepage">Home</a>
           → Frequency & Movement
         </div>
       </header>
       <div style="display: flex; height: 100%">
-        <div style="padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+        <div style="padding: 2rem; border-right: 3px solid var(--primary)">
           
           <h2><div class="bullet">4</div>An illusion</h2>
           <div class="text">

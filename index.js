@@ -14,8 +14,8 @@ const LoopSquare = {
   },
   template: `
     <g :transform="r(360 / count * n)" opacity="0.5">
-      <rect :x="size / -2" :y="size / -2" :width="size" :height="size" fill="var(--color-purple)" />
-      <rect :x="size / -2" :y="size / -2" :width="size / 2" :height="size / 2" fill="var(--color-yellow)" />
+      <rect :x="size / -2" :y="size / -2" :width="size" :height="size" fill="var(--purple)" />
+      <rect :x="size / -2" :y="size / -2" :width="size / 2" :height="size / 2" fill="var(--yellow)" />
     </g>
   `
 };
@@ -105,7 +105,7 @@ new Vue({
   }),
   template: `
     <div style="height: 100vh">
-      <header style="background: var(--color-yellow); border-bottom: none">
+      <header style="background: var(--yellow); border-bottom: none">
         <div>
           ← <a href="https://designstem.github.io/homepage">Home</a>
         </div>
@@ -115,7 +115,7 @@ new Vue({
           <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
         </div>
       </header-->
-      <div style="display: flex; height: 100%; background: var(--color-yellow)">
+      <div style="display: flex; height: 100%; background: var(--yellow)">
         <div style="padding: 2rem;">
           
           <h1 style="font-size: 5rem; line-height: 5rem;">Frequency &&nbsp;Movement</h1>

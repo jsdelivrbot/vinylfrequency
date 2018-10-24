@@ -26,7 +26,7 @@ new Vue({
            </header>
             
            <div style="display: flex; height: 100%">
-            <div style="width: 400px; padding: 2rem; border-right: 3px solid var(--color-gray-dark)">
+            <div style="width: 400px; padding: 2rem; border-right: 3px solid var(--primary)">
             <h2>1. Spin this vinyl</h2>
             <p>A comprehensive explanation what the heck is going on is going here.</p>
             

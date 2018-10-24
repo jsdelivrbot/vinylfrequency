@@ -17,7 +17,7 @@ export default {
                 :y1="cy(360 / count * index,size/2)"
                 :x2="cx(360 / count * index,size)"
                 :y2="cy(360 / count * index,size)"
-                :stroke="['var(--color-blue)','var(--color-red)'][index % 2]"
+                :stroke="['var(--blue)','var(--red)'][index % 2]"
                 stroke-width="4"
             />
         </g>
