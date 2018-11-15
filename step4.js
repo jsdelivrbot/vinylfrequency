@@ -1,5 +1,8 @@
-import Buttons from "https://rawgit.com/designstem/style/master/components/Buttons.js";
+import * as components from "https://designstem.github.io/framework/framework.js";
 
+for (const name in components) {
+  Vue.component(name, components[name]);
+}
 import Scene from "./components/Scene.js";
 import Spoke2 from "./components/Spoke2.js";
 import Spinner from "./components/Spinner.js";
@@ -78,7 +81,6 @@ new Vue({
     LoopHammer,
     LoopMetropolis,
     LoopHorse,
-    Buttons
   },
   methods: {
     t(x, y, r = 0) {
@@ -124,7 +126,7 @@ new Vue({
           <br>
           <h3>Now, select image you want to show on a wheel</h3>
 
-          <buttons :buttons="loops.map(l => l.title)" v-model="loopIndex" />
+          <f-buttons :buttons="loops.map(l => l.title)" v-model="loopIndex" />
 
           <template v-if="loopIndex > 0">
           <br>

@@ -110,11 +110,6 @@ new Vue({
           ← <a href="https://designstem.github.io/homepage">Home</a>
         </div>
       </header>
-      <!--header>
-        <div>
-          <div>Steps:&nbsp;&nbsp;<div class="bullet">1</div></div>
-        </div>
-      </header-->
       <div style="display: flex; height: 100%; background: var(--yellow)">
         <div style="padding: 2rem;">
           
@@ -124,6 +119,7 @@ new Vue({
             <a href="https://designstem.github.io/vinylfrequency/step1.html" class="button_primary">Go to Step 1 →</a>
 
         </div>
+
         <div style="flex:1; margin-left: -10rem">
           <Scene :size="sceneSize">
             <Spinner :speed="speed">

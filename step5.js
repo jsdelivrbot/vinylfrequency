@@ -1,4 +1,8 @@
-import Buttons from "https://rawgit.com/designstem/style/master/components/Buttons.js";
+import * as components from "https://designstem.github.io/framework/framework.js";
+
+for (const name in components) {
+  Vue.component(name, components[name]);
+}
 
 import Scene from "./components/Scene.js";
 import Spoke2 from "./components/Spoke2.js";
@@ -78,7 +82,6 @@ new Vue({
     LoopHammer,
     LoopMetropolis,
     LoopHorse,
-    Buttons
   },
   methods: {
     t(x, y, r = 0) {
